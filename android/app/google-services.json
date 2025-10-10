@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "988320155539",
+    "project_id": "daftar-afandi",
+    "storage_bucket": "daftar-afandi.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988320155539:android:5bf15b72ccb6fb8f654a66",
+        "android_client_info": {
+          "package_name": "com.example.daftar_afandi_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCddacn1NlDAkkEnRZ-qrsT_7m9VVcaLCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
