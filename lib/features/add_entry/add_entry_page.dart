@@ -11,7 +11,6 @@ class AddEntryPage extends StatefulWidget {
   @override
   State<AddEntryPage> createState() => _AddEntryPageState();
 }
-
 class _AddEntryPageState extends State<AddEntryPage> {
   final nameController = TextEditingController();
   final amountController = TextEditingController();
