@@ -64,25 +64,30 @@ class ActionButton extends StatelessWidget {
       debugPrint('❌ فشل رفع البيانات إلى Firebase: $e');
     }
 
-    // 🧹 تنظيف الحقول
     _clearFields();
     onValidation(nameError: null, amountError: null);
   }
 
-  /// 📤 رفع بيانات الشخص إلى Firebase Firestore
   Future<void> _uploadPersonToFirebase(Person person) async {
     final firestore = FirebaseFirestore.instance;
 
-    await firestore.collection('people').doc(person.name).set({
-      'name': person.name,
-      'amount': person.amount,
-      'imagePath': person.imagePath,
-      'transactions': person.transactions,
-      'createdAt': FieldValue.serverTimestamp(), // وقت الإضافة
-    });
+    try {
+      final docRef = firestore.collection('people').doc();
+      await docRef.set({
+        'name': person.name,
+        'amount': person.amount,
+        'imagePath': person.imagePath,
+        'transactions': person.transactions,
+        'createdAt': FieldValue.serverTimestamp(),
+      });
+
+      debugPrint('✅ تم رفع البيانات إلى Firebase بنجاح! ID: ${docRef.id}');
+    } catch (e, st) {
+      debugPrint('❌ فشل رفع البيانات إلى Firebase: $e');
+      debugPrint('📄 StackTrace: $st');
+    }
   }
 
-  /// 🧹 تنظيف حقول الإدخال
   void _clearFields() {
     nameController.clear();
     amountController.clear();

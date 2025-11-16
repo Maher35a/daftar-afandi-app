@@ -32,8 +32,6 @@ class FirebaseService {
       });
     }
   }
-
-  /// 🔄 مزامنة الكل
   static Future<void> syncAll() async {
     await syncPeopleToFirebase();
     await syncProductsToFirebase();
