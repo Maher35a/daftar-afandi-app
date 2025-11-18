@@ -3,7 +3,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:meta/meta.dart';
 import '../Models/personClass.dart';
 import '../features/Hive/hive_service.dart';
-
 part 'person__state.dart';
 
 class PersonCubit extends Cubit<PersonState> {

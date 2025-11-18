@@ -1,7 +1,8 @@
 import 'package:daftar_afandi_app/costant/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import '../Purchases/PurchasesPage.dart';
+import '../Salespage/Sales.dart';
 import 'Stored-part/storepage.dart';
 
 class ReportsPage extends StatelessWidget {
@@ -96,7 +97,6 @@ class ReportsPage extends StatelessWidget {
   }
 }
 
-// كلاس صغير لتنظيم العناصر
 class _ReportItem {
   final String title;
   final IconData icon;
@@ -105,18 +105,4 @@ class _ReportItem {
   _ReportItem({required this.title, required this.icon, required this.onTap});
 }
 
-class SalesPage extends StatelessWidget {
-  const SalesPage({super.key});
 
-  @override
-  Widget build(BuildContext context) =>
-      const Scaffold(body: Center(child: Text("صفحة المبيعات")));
-}
-
-class PurchasesPage extends StatelessWidget {
-  const PurchasesPage({super.key});
-
-  @override
-  Widget build(BuildContext context) =>
-      const Scaffold(body: Center(child: Text("صفحة المشتريات")));
-}

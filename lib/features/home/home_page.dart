@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../costant/constants.dart';
+import '../Customers_Merchants/Customers and Merchants.dart';
 import '../PeopleList/PeopleSection.dart';
+import '../Purchases/PurchasesPage.dart';
 import '../Reports/Reportspage.dart';
+import '../Salespage/Sales.dart';
 import '../add_entry/add_entry_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,8 +17,11 @@ class _HomePageState extends State<HomePage> {
   int _currentIndex = 1;
   final List<Widget> _screens = [
     const ReportsPage(),
+    const Customers_Merchants(),
     const PeopleSection(),
-    const AddEntryPage(),
+    const PurchasesPage(),
+    const SalesPage(),
+
   ];
   @override
   Widget build(BuildContext context) {
@@ -54,13 +60,23 @@ class _HomePageState extends State<HomePage> {
             label: "التقارير",
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.add_box_rounded),
+            label: "العملاء والتجار ",
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: "الرئيسية",
           ),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_business_outlined),
+            label: "المشتريات ",
+          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_box_rounded),
-            label: "إضافة",
+            label: "المبيعات ",
           ),
+
         ],
       ),
       floatingActionButton: _currentIndex == 1
